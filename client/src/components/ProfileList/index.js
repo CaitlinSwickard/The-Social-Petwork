@@ -1,3 +1,6 @@
+// this is rendering all the profile cards...use this with the video to recreate the page
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 

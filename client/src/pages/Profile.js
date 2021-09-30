@@ -1,3 +1,5 @@
+// this is where we want to watch the video to mimic the application layout 
+
 import React from 'react';
 
 import { Redirect, useParams } from 'react-router-dom';
