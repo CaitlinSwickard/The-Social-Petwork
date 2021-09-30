@@ -8,6 +8,9 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+
+  // do not uncode the header until we get through more pages
+
   return (
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
