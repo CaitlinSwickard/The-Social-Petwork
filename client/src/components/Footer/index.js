@@ -1,6 +1,10 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 
+
+// leave the go back button but we will recreate our own footer
+// things to add: name of app, fake social media icons??
+
 const Footer = () => {
   const location = useLocation();
   const history = useHistory();

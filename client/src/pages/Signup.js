@@ -49,7 +49,10 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{' '}
+
+                {/* switch link to CREATE A PROFILE page */}
                 <Link to="/">back to the homepage.</Link>
+                
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>

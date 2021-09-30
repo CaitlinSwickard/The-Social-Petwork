@@ -1,8 +1,3 @@
-ReactDom.render(
-  <h1>Hello Matey!!</h1>,
-  document.getElementById('root')
-);
-
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
@@ -13,6 +8,8 @@ import { QUERY_PROFILES } from '../utils/queries';
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
+
+// this is the where we want to pimp out the home page. Add info about the app pics........
 
   return (
     <main>
