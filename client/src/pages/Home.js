@@ -1,3 +1,8 @@
+ReactDom.render(
+  <h1>Hello Matey!!</h1>,
+  document.getElementById('root')
+);
+
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
