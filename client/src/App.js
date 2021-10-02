@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FeedPage from './pages/feedpage/FeedPage';
+import Messenger from './pages/messenger/Messenger';
 import ProfilePage from './pages/profilepage/ProfilePage';
 
 const httpLink = createHttpLink({
@@ -62,6 +63,9 @@ function App() {
             </Route>
             <Route exact path="/feedpage">
               <FeedPage/>
+            </Route>
+            <Route exact path="/messenger">
+              <Messenger/>
             </Route>
             <Route exact path="/profilepage">
               <ProfilePage/>
