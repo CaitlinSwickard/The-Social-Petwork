@@ -18,7 +18,7 @@ import FeedPage from './pages/feedpage/FeedPage';
 import ProfilePage from './pages/profilepage/ProfilePage';
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
