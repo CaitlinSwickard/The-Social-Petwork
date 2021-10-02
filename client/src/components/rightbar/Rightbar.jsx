@@ -3,13 +3,15 @@ import { Users } from "../../dummyData";
 import Online from "../online/Online";
 
 export default function Rightbar({ profile }) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const HomeRightbar = () => {
     return (
       <>
         <div className="birthdayContainer">
           <img className="birthdayImg" src="assets/post/gift.png" alt="" />
           <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
+            <b>Pola Foster</b> and <b>3 other friends</b> have a birthday today.
           </span>
         </div>
         <img className="rightbarAd" src="assets/ad.png" alt="" />
@@ -45,51 +47,51 @@ export default function Rightbar({ profile }) {
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
             <img
-              src="assets/pet/pet2.jpg"
+              src={`${PF}pet/pet2.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Janell Shrum</span>
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/pet/pet8.jpg"
+              src={`${PF}pet/pet8.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Dora Hawks</span>
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/pet/pet13.jpg"
+              src={`${PF}pet/pet13.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Gary Duty</span>
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/pet/pet14.jpg"
+              src={`${PF}pet/pet14.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Safak </span>
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/pet/pet11.jpg"
+              src={`${PF}pet/pet11.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Bennett</span>
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/pet/pet9.jpg"
+              src={`${PF}pet/pet9.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Thomas Holden</span>
           </div>
         </div>
       </>

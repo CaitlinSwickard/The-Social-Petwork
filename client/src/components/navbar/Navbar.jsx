@@ -3,13 +3,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import {Link} from "react-router-dom";
 
 
 export default function Navbar(){
     return (
         <div className="navbarContainer">
             <div className="navbarLeft">
+                <Link to="/feedpage" style={{textDecoration: 'none'}}>
                 <span className="logo">PetSocial</span>
+                </Link>
             </div>
             <div className="navbarCenter">
                 <div className="searchbar">
