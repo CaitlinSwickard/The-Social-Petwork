@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 .eslintcache
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 # testing
 /coverage
 
