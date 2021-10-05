@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://localhost:8800/api",
   "dependencies": {
     "@apollo/client": "^3.3.5",
     "@emotion/react": "^11.4.1",
@@ -12,13 +12,15 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "dotenv": "^10.0.0",
+    "axios": "^0.22.0",
+    "dotenv": "^8.2.0",
     "graphql": "^15.4.0",
     "jwt-decode": "^3.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
