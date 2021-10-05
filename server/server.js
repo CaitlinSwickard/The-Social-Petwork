@@ -1,11 +1,16 @@
 const express = require('express');
+// const mongoose = require("mongoose");
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const userRoute = require("./routes/users");
+const authRoute = require("./routes/auth");
 
 dotenv.config();
+
+
 
 const { typeDefs, resolvers } = require('./schemas');
 // Import `authMiddleware()` function to be configured with the Apollo Server
@@ -29,13 +34,18 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
+app.use("/api/users", userRoute);
+app.use("/api/auth", authRoute);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
+
+
 
 db.once('open', () => {
   app.listen(PORT, () => {
