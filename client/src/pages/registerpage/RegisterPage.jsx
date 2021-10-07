@@ -23,9 +23,9 @@ export default function RegisterPage() {
         password: password.current.value,
       };
       try{
-        const res = await axios.post('/auth/registerpage', user);
+        const res = await axios.post('/api/auth/registerpage', user);
         // this will direct the user back to the login page after registering
-        history.push('/login');
+        history.push('/loginpage');
       } catch (err){
         console.log(err);
       }

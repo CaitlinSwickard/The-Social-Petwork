@@ -16,7 +16,7 @@ export default function ProfilePage() {
   
   useEffect(()=> {
     const fetchUser = async() => {
-      const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(`/users?username=${user.username}`);
       setUser(res.data)
     }
     fetchUser();
