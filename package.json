@@ -17,6 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "@mui/icons-material": "^5.0.1"
+    "@mui/icons-material": "^5.0.1",
+    "socket.io": "^4.2.0"
   }
 }
