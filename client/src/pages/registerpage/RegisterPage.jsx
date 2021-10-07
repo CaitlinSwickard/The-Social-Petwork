@@ -1,7 +1,8 @@
-// import axios from "axios";
-// import { useRef } from "react";
-// import "./register.css";
-// import { useHistory } from "react-router";
+import axios from "axios";
+import { useRef } from "react";
+import "./register.css";
+import { useHistory } from "react-router";
+import { Link } from 'react-router-dom';
 
 // export default function RegisterPage() {
 
@@ -144,58 +145,54 @@ function Register(props) {
   }
 
   return (
-    <div className="form-container">
-      <Form onSubmit={onSubmit} noValidate className={loading ? "loading" : ""}>
-        <h1>Register</h1>
-        <Form.Input
-          label="Username"
-          placeholder="Username"
-          name="username"
-          type="text"
-          value={values.username}
-          error={errors.username ? true : false}
-          onChange={onChange}
-        />
-        <Form.Input
-          label="Email"
-          placeholder="Email"
-          name="email"
-          type="email"
-          value={values.email}
-          error={errors.email ? true : false}
-          onChange={onChange}
-        />
-        <Form.Input
-          label="Password"
-          placeholder="Password"
-          name="password"
-          type="password"
-          value={values.password}
-          error={errors.password ? true : false}
-          onChange={onChange}
-        />
-        <Form.Input
-          label="Confirm password"
-          placeholder="Confirm password"
-          name="confirmPassword"
-          type="password"
-          value={values.confirmPassword}
-          error={errors.confirmPassword ? true : false}
-          onChange={onChange}
-        />
-        <Button type="submit" primary>
-          Register
-        </Button>
-      </Form>
-      {/* {Object.keys(errors).length > 0 && (
-        <div className="ui error message">
-          <ul className="list">
-            {Object.values(errors).map(value => (
-              <li key={value}>{value}</li>
-            ))}
-          </ul>
+    <div className="login">
+      <div className="loginWrapper">
+        <div className="loginLeft">
+          <h3 className="loginLogo">The Social PetWork</h3>
+          <span className="loginDesc">
+            Connect with friends and the world around you on The Social PetWork.
+          </span>
         </div>
-      )} */}
+        <div className="loginRight">
+          <form className="loginBox" onSubmit={handleClick}>
+            <input
+              placeholder="Username"
+              required
+              ref={username}
+              className="loginInput"
+            />
+            <input
+              placeholder="Email"
+              required
+              ref={email}
+              className="loginInput"
+              type="email"
+            />
+            <input
+              placeholder="Password"
+              required
+              ref={password}
+              className="loginInput"
+              type="password"
+              minLength="6"
+            />
+            <input
+              placeholder="Password Again"
+              required
+              ref={passwordAgain}
+              className="loginInput"
+              type="password"
+            />
+            <button className="loginButton" type="submit">
+              Sign Up
+            </button>
+            {/* <span className="or">or</span> */}
+            <Link to="/loginpage">
+            <button className="loginRegisterButton">Log into Account</button>
+            </Link>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

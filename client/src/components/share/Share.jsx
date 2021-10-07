@@ -33,7 +33,7 @@ export default function Share() {
       console.log(newPost);
       try {
         await axios.post("/api/upload", data);
-        window.location.reload();
+        // window.location.reload();
       } catch (err) {
         console.log(err);
       }

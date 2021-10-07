@@ -41,11 +41,11 @@
 //   cache: new InMemoryCache(),
 // });
 
-// const { user } = useContext(AuthContext)
+// // const { user } = useContext(AuthContext)
 
 // function App() {
 
-//   const { user } = useContext(AuthContext)
+//   // const { user } = useContext(AuthContext)
 //   return (
 //     <ApolloProvider client={client}>
 //       <Router>
@@ -68,7 +68,7 @@
 //               <Profile />
 //             </Route>
 //             {/* these are all the pages we added outside the boiler plate */}
-//             <Route exact path="/feedpage">
+//             {/* <Route exact path="/feedpage">
 //               {user ? <FeedPage /> : <RegisterPage />}
 //             </Route>
 //             <Route exact path="/messenger">
@@ -82,7 +82,7 @@
 //             </Route>
 //             <Route exact path="/registerpage">
 //               <RegisterPage />
-//             </Route>
+//             </Route> */}
 //           </div>
 //           {/* <Footer /> */}
 //         </div>
