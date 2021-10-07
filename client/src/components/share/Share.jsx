@@ -7,7 +7,10 @@ import {Cancel} from "@material-ui/icons";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/auth";
 import axios from "axios";
-
+import { useMutation } from "@apollo/react-hooks";
+import { CREATE_POST_MUTATION } from "../../utils/mutations";
+import { QUERY_POSTS } from "../../utils/queries";
+import { useForm } from "../../utils/hooks";
 
 
 export default function Share() {
@@ -16,36 +19,63 @@ export default function Share() {
   const desc = useRef();
   const [file, setFile] = useState(null);
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    // create a new post
-    const newPost = {
-      userId: user._id,
-      desc: desc.current.value,
-    };
-    // this uploads local photos to the new post and the form data entered
-    if (file) {
-      const data = new FormData();
-      const fileName = Date.now() + file.name;
-      data.append("name", fileName);
-      data.append("file", file);
-      newPost.img = fileName;
-      console.log(newPost);
-      try {
-        await axios.post("/api/upload", data);
-        window.location.reload();
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    // reload page after new post
-    try {
-      await axios.post("/api/posts", newPost);
-      window.location.reload();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  //   // create a new post
+  //   const newPost = {
+  //     userId: user._id,
+  //     desc: desc.current.value,
+  //   };
+  //   // this uploads local photos to the new post and the form data entered
+  //   if (file) {
+  //     const data = new FormData();
+  //     const fileName = Date.now() + file.name;
+  //     data.append("name", fileName);
+  //     data.append("file", file);
+  //     newPost.img = fileName;
+  //     console.log(newPost);
+  //     try {
+  //       await axios.post("/api/upload", data);
+  //       window.location.reload();
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   }
+  //   // reload page after new post
+  //   try {
+  //     await axios.post("/api/posts", newPost);
+  //     window.location.reload();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  const { values, onChange, onSubmit } = useForm(createPostCallback, {
+    body: ""
+  });
+
+  const [createPost, { error }] = useMutation(CREATE_POST_MUTATION, {
+    variables: values,
+    update(proxy, result) {
+      const data = proxy.readQuery({
+        query: QUERY_POSTS,
+      });
+      proxy.writeQuery({
+        query: QUERY_POSTS,
+        data: {
+          getPosts: [result.data.createPost, ...data.getPosts],
+        },
+      });
+      values.body = "";
+    },
+    onError(err) { 
+      return err;
+    },
+  });
+
+  function createPostCallback(){
+    createPost();
+  }
 
   return (
     <div className="share">
@@ -61,6 +91,8 @@ export default function Share() {
             placeholder={"What's on your mind " + user.username + "?"}
             className="shareInput"
             ref={desc}
+            onChange={onChange}
+            name="body"
           />
         </div>
         <hr className="shareHr"/>
@@ -71,7 +103,7 @@ export default function Share() {
             <Cancel className="shareCancelImg" onClick={() => setFile(null)} />
           </div>
         )}
-        <form className="shareBottom" onSubmit={submitHandler}>
+        <form className="shareBottom" onSubmit={onSubmit}>
             <div className="shareOptions">
                 <label htmlFor="file" className="shareOption">
                     <PermMediaIcon htmlColor="tomato" className="shareIcon"/>
