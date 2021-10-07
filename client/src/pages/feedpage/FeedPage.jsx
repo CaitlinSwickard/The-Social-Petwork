@@ -7,12 +7,11 @@ import Feed from "../../components/feed/Feed";
 export default function FeedPage() {
   return (
     <>
-    <Navbar/>
-    <div className="homeContainer">
-    <Leftbar/>
-    <Feed/>
-    <Rightbar/>
-    </div>
-      </>
+      <div className="homeContainer">
+      <Leftbar />
+      <Feed />
+      <Rightbar />
+      </div>
+    </>
   );
 }
