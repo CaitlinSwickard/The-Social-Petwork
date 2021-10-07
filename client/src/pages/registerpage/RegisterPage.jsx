@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef } from "react";
 import "./register.css";
 import { useHistory } from "react-router";
+import { Link } from 'react-router-dom';
 
 export default function RegisterPage() {
 
@@ -36,9 +37,9 @@ export default function RegisterPage() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">The Social Pet Work</h3>
+          <h3 className="loginLogo">The Social PetWork</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you on The Social Pet Work.
+            Connect with friends and the world around you on The Social PetWork.
           </span>
         </div>
         <div className="loginRight">
@@ -74,7 +75,10 @@ export default function RegisterPage() {
             <button className="loginButton" type="submit">
               Sign Up
             </button>
+            {/* <span className="or">or</span> */}
+            <Link to="/loginpage">
             <button className="loginRegisterButton">Log into Account</button>
+            </Link>
           </form>
         </div>
       </div>

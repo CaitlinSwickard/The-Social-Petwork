@@ -21,7 +21,7 @@ const handleClick = (e) => {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">The Social Pet Work</h3>
+          <h3 className="loginLogo">The Social PetWork</h3>
           <span className="loginDesc">
             No Hoomans. Animals ONLY!! We ruuuleee!
           </span>
