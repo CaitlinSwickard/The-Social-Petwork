@@ -4,9 +4,15 @@ import PetsIcon from '@mui/icons-material/Pets';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import {Link} from "react-router-dom";
+import { useContext } from "react";
+import {AuthContext} from "../../context/AuthContext";
 
 
 export default function Navbar(){
+
+    const {user} = useContext(AuthContext);
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
         <div className="navbarContainer">
             <div className="navbarLeft">
@@ -39,7 +45,16 @@ export default function Navbar(){
                         <span className="navbarIconBadge">1</span>
                     </div>
                 </div>
-                <img src="/assets/pet/pet1.jpg" alt="" className="navbarImg" />
+                {/* <Link to={`/profile/${user.username}`}>
+                <img src={
+                    user.profilePicture
+                    ? PF + user.profilePicture
+                    : PF + "pet/noAvatar.png"
+                } 
+                alt="" 
+                className="navbarImg" 
+                />
+                </Link> */}
             </div>
         </div>
     );
