@@ -115,23 +115,20 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          {/* {user ? <FeedPage /> : <RegisterPage />} */}
-          <FeedPage />
+          {user ? <FeedPage /> : <RegisterPage />}
         </Route>
         <Route path="/loginpage">
-          {/* {user ? <Redirect to="/" /> : <LoginPage />}</Route> */}
-          <LoginPage />
+          {user ? <Redirect to="/" /> : <LoginPage />}
         </Route>
         <Route path="/registerpage">
           {user ? <Redirect to="/" /> : <RegisterPage />}
-          {/* <RegisterPage /> */}
+          <RegisterPage />
         </Route>
-        {/* <Route path="/profile/:username"> */}
-        <Route path="/profilepage">
+        <Route path="/profile/:username">
           <ProfilePage />
-          <Route path="/messenger">
-            <Messenger />
-          </Route>
+        </Route>
+        <Route path="/messenger">
+          <Messenger />
         </Route>
       </Switch>
     </Router>

@@ -33,13 +33,18 @@ export default function Share() {
       console.log(newPost);
       try {
         await axios.post("/api/upload", data);
-      } catch (err) {}
+        window.location.reload();
+      } catch (err) {
+        console.log(err);
+      }
     }
     // reload page after new post
     try {
       await axios.post("/api/posts", newPost);
       window.location.reload();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
