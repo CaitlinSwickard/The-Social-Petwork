@@ -3,13 +3,24 @@ import SearchIcon from '@mui/icons-material/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth";
+
+
+export default function Navbar(){
+
+    const { user, logout } = useContext(AuthContext);
+
+    console.log(user);
+
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
 export default function Navbar() {
     return (
         <div className="navbarContainer">
             <div className="navbarLeft">
-                <Link to="/feedpage" style={{textDecoration: 'none'}}>
+                <Link to="/" style={{textDecoration: 'none'}}>
                 <span className="logo">PetSocial</span>
                 </Link>
             </div>
@@ -20,10 +31,6 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="navbarRight">
-                <div className="navbarlinks">
-                    <span className="navbarLink">Homepage</span>
-                    <span className="navbarLink">Timeline</span>
-                </div>
                 <div className="navbarIcons">
                     <div className="navbarIconItem">
                         <PetsIcon />
@@ -40,16 +47,44 @@ export default function Navbar() {
                         <span className="navbarIconBadge">1</span>
                     </div>
                 </div>
-                {/* <Link to={`/profile/${user.username}`}>
-                <img src={
-                    user.profilePicture
-                    ? PF + user.profilePicture
-                    : PF + "pet/noAvatar.png"
-                } 
-                alt="" 
-                className="navbarImg" 
-                />
-                </Link> */}
+                <div className="navbarlinks">
+                    {user ? (
+                        <div>
+                            <div>
+                                <Link to={`/profile/${user.username}`}>
+                                    <img src={
+                                        user.profilePicture
+                                        ? PF + user.profilePicture
+                                        : PF + "pet/noAvatar.png"
+                                    } 
+                                    alt="" 
+                                    className="navbarImg" 
+                                    />
+                                </Link>
+                            </div>
+                            <br />
+                            <div>
+                                <Link to="/" style={{textDecoration: 'none'}} onClick={logout}>
+                                    Logout
+                                </Link>
+                            </div> 
+                        </div>
+                    ) : (
+                        <div>
+                            <div>
+                                <Link to="/loginpage" style={{textDecoration: 'none'}} onClick={logout}>
+                                    Login
+                                </Link>
+                            </div>
+                            <div>
+                                <Link to="/registerpage" style={{textDecoration: 'none'}}>
+                                    Register
+                                </Link> 
+                            </div>
+                        </div>
+   
+                    )}
+                </div>
             </div>
         </div>
     );
