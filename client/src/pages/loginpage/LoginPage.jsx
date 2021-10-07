@@ -118,47 +118,38 @@ function Login(props) {
   };
 
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">The Social PetWork</h3>
-          <span className="loginDesc">
-            No Hoomans. Animals ONLY!! We ruuuleee!
-          </span>
-        </div>
-        <div className="loginRight">
-        <form className="loginBox" onSubmit={handleClick}>
-            <input
-              placeholder="Email"
-              type="email"
-              required
-              className="loginInput"
-              ref={email}
-            />
-            <input
-              placeholder="Password"
-              type="password"
-              required
-              minLength="6"
-              className="loginInput"
-              ref={password}
-            />
-            <button className="loginButton" type="submit" disabled={isFetching}>
-              {isFetching ? (
-                <CircularProgress color="white" size="20px" />
-              ) : (
-                "Log In"
-              )}
-            </button>
-            <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
-              {isFetching ? (
-                <CircularProgress color="white" size="20px" />
-              ) : (
-                "Create a New Account"
-              )}
-            </button>
-          </form>
+    <div className="form-container">
+      <Form onSubmit={onSubmit} noValidate className={loading ? "loading" : ""}>
+        <h1>Login</h1>
+        <Form.Input
+          label="Username"
+          placeholder="Username"
+          name="username"
+          type="text"
+          value={values.username}
+          error={errors.username ? true : false}
+          onChange={onChange}
+        />
+        <Form.Input
+          label="Password"
+          placeholder="Password"
+          name="password"
+          type="password"
+          value={values.password}
+          error={errors.password ? true : false}
+          onChange={onChange}
+        />
+        <Button type="submit" primary>
+          Login
+        </Button>
+      </Form>
+      {Object.keys(errors).length > 0 && (
+        <div className="ui error message">
+          <ul className="list">
+            {Object.values(errors).map(value => (
+              <li key={value}>{value}</li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
