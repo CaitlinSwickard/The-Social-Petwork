@@ -1,33 +1,62 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Profile {
-    _id: ID
-    name: String
-    email: String
-    password: String
-    skills: [String]!
+  type User{
+    id: ID!
+    email: String!
+    token: String!
+    username: String!
+    createdAt: String!
+    profilePicture: String!
   }
 
-  type Auth {
-    token: ID!
-    profile: Profile
+  type Post{
+    id: ID!
+    body: String!
+    createdAt: String!
+    username: String
+    comments: [Comment]
+    likes: [Like]
+    likeCount: Int
+    commentCount: Int
   }
 
-  type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
-    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
-    me: Profile
+  type Comment{
+    id: ID!
+    createdAt: String!
+    username: String!
+    body: String!
   }
 
-  type Mutation {
-    addProfile(name: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+  type Like{
+    id: ID!
+    createdAt: String!
+    username: String!
+  }
 
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile: Profile
-    removeSkill(skill: String!): Profile
+  input RegisterInput{
+    username: String!
+    password: String!
+    confirmPassword: String!
+    email: String!
+  }
+
+  type Query{
+    getPosts: [Post]
+    getPost(postId: ID!): Post
+  }
+
+  type Mutation{
+    register(registerInput: RegisterInput): User!
+    login(username: String!, password: String!): User!
+
+    createPost(body: String!): Post!
+    deletePost(postId: ID!): String!
+
+    createComment(postId: ID!, body: String!): Post!
+    deleteComment(postId: ID!, commentId: ID!): Post!
+
+    likePost(postId: ID!): Post!
   }
 `;
 
