@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
+// import {Navbar} from "./navbar"
 
 import "./feed.css";
 import Share from "../share/Share";
@@ -39,6 +40,8 @@ function Feed() {
   console.log("ENV: ", process.env.REACT_APP_SECRET_KEY);
 
   return (
+    // <Navbar/>
+
     <div className="feed">
       <div className="feedWrapper">
         <Share />

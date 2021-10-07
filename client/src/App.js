@@ -132,11 +132,13 @@ function App() {
             <ProfilePage />
           </Route> */}
           <Route path="/messenger">
-            <Messenger />
+         
           </Route>
         </Switch>
         <Navbar />
+        
         <Route exact path="/" component={FeedPage} />
+        <Route exact path="/messenger" component={Messenger} />
         <AuthRoute exact path="/loginpage" component={Login} />
         <AuthRoute exact path="/registerpage" component={Register} />
       </Router>
