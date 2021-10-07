@@ -7,14 +7,15 @@ import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
 
-export default function Feed({username}) {
+export default function Feed() {
 const [posts,setPosts] = useState([]);
 const {user} = useContext(AuthContext);
 
 useEffect(()=> {
+
   const fetchPosts = async() => {
-    const res = username 
-      ? await axios.get('/api/posts/profile/' + username)
+    const res = user.username 
+      ? await axios.get('/api/posts/profile/' + user.username)
       : await axios.get('/api/posts/timeline/' + user._id);
       // this sorts the posts in order from new first
       setPosts(
@@ -24,13 +25,13 @@ useEffect(()=> {
       );
     };
     fetchPosts();
-  }, [username, user._id]);
+  }, [user.username, user._id]);
 
   return (
     <div className="feed">
       <div className="feedWrapper">
         {/* setting so you can only create a new post while on your own profile page */}
-      {(!username || username === user.username) && <Share />}
+      {user.username && <Share />}
         {posts.map((p) => (
           <Post key={p._id} post={p} />
         ))}
