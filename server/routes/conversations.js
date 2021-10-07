@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Conversation = require("../models/Conversation");
-const Convesation = require("../models/Conversation")
 
 // new convo
 router.post("/", async(req,res)=>{
