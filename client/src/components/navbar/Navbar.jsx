@@ -28,7 +28,9 @@ export default function Navbar(){
                         <span className="navbarIconBadge">1</span>
                     </div>
                     <div className="navbarIconItem">
-                        <ChatIcon/>
+                        <ChatIcon
+                        //  onClick = {href="../../pages/messenger/Messenger.jsx"}
+                        />
                         <span className="navbarIconBadge">2</span>
                     </div>
                     <div className="navbarIconItem">
