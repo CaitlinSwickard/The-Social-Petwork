@@ -16,7 +16,6 @@ export default function Navbar(){
 
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
-export default function Navbar() {
     return (
         <div className="navbarContainer">
             <div className="navbarLeft">

@@ -117,8 +117,8 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        {/* <Switch>
-          <Route exact path="/">
+        <Switch>
+          {/* <Route exact path="/">
             {user ? <FeedPage /> : <RegisterPage />}
           </Route>
           <Route path="/loginpage">
@@ -130,11 +130,11 @@ function App() {
           </Route>
           <Route path="/profile/:username">
             <ProfilePage />
-          </Route>
+          </Route> */}
           <Route path="/messenger">
             <Messenger />
           </Route>
-        </Switch> */}
+        </Switch>
         <Navbar />
         <Route exact path="/" component={FeedPage} />
         <AuthRoute exact path="/loginpage" component={Login} />
