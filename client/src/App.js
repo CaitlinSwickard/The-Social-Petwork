@@ -126,15 +126,9 @@ function App() {
         </Route>
         <Route path="/profile/:username">
           <ProfilePage />
-<<<<<<< HEAD
-          <Route path ="/messenger">
-            <Messenger />
-          </Route>
-=======
         </Route>
         <Route path="/messenger">
           <Messenger />
->>>>>>> c39ee9c86793574e3f70076152335283ece9c51c
         </Route>
       </Switch>
     </Router>
