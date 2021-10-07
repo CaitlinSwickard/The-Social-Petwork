@@ -56,10 +56,11 @@ export default function Navbar(){
                                         ? PF + user.profilePicture
                                         : PF + "pet/noAvatar.png"
                                     } 
-                                    alt="" 
+                                    alt="profile-picture" 
                                     className="navbarImg" 
                                     />
                                 </Link>
+                                <span>{user.username}</span>
                             </div>
                             <br />
                             <div>
