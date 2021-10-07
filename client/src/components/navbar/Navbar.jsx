@@ -3,16 +3,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import {Link} from "react-router-dom";
-import { useContext } from "react";
-import {AuthContext} from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
-
-export default function Navbar(){
-
-    const {user} = useContext(AuthContext);
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
+export default function Navbar() {
     return (
         <div className="navbarContainer">
             <div className="navbarLeft">
@@ -22,8 +15,8 @@ export default function Navbar(){
             </div>
             <div className="navbarCenter">
                 <div className="searchbar">
-                    <SearchIcon className="searchIcon"/>
-                    <input placeholder="Search for new Furriends" className="searchInput"/>
+                    <SearchIcon className="searchIcon" />
+                    <input placeholder="Search for new Furriends" className="searchInput" />
                 </div>
             </div>
             <div className="navbarRight">
@@ -33,17 +26,17 @@ export default function Navbar(){
                 </div>
                 <div className="navbarIcons">
                     <div className="navbarIconItem">
-                        <PetsIcon/>
+                        <PetsIcon />
                         <span className="navbarIconBadge">1</span>
                     </div>
                     <div className="navbarIconItem">
-                        <ChatIcon
-                        //  onClick = {href="../../pages/messenger/Messenger.jsx"}
-                        />
+                        <Link to ="/messenger"  >
+                            <ChatIcon />
+                        </Link>
                         <span className="navbarIconBadge">2</span>
                     </div>
                     <div className="navbarIconItem">
-                        <NotificationsIcon/>
+                        <NotificationsIcon />
                         <span className="navbarIconBadge">1</span>
                     </div>
                 </div>
