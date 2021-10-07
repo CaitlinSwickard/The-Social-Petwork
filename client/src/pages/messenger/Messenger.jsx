@@ -103,7 +103,7 @@ export default function Messenger() {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="messenger">
                 <div className="chatMenu" >
                     <div className="chatMenuWrapper">
