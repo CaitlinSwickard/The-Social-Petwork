@@ -1,52 +1,52 @@
 export const Users = [
     {
       id:1,
-      profilePicture: "assets/pet/pet1.jpg",
+      profilePicture: "pet/pet1.jpg",
       username: "Safak Kocaoglu",
     },
     {
       id:2,
-      profilePicture: "assets/pet/pet2.jpg",
+      profilePicture: "pet/pet2.jpg",
       username: "Janell Shrum",
     },
     {
       id:3,
-      profilePicture: "assets/pet/pet3.jpg",
+      profilePicture: "pet/pet3.jpg",
       username: "Alex Durden",
     },
     {
       id:4,
-      profilePicture: "assets/pet/pet8.jpg",
+      profilePicture: "pet/pet8.jpg",
       username: "Dora Hawks",
     },
     {
       id:5,
-      profilePicture: "assets/pet/pet9.jpg",
+      profilePicture: "pet/pet9.jpg",
       username: "Thomas Holden",
     },
     {
       id:6,
-      profilePicture: "assets/pet/pet10.jpg",
+      profilePicture: "pet/pet10.jpg",
       username: "Shirley Beauchamp",
     },
     {
       id:7,
-      profilePicture: "assets/pet/pet11.jpg",
+      profilePicture: "pet/pet11.jpg",
       username: "Travis Bennett",
     },
     {
       id:8,
-      profilePicture: "assets/pet/pet12.jpg",
+      profilePicture: "pet/pet12.jpg",
       username: "Kristen Thomas",
     },
     {
       id:9,
-      profilePicture: "assets/pet/pet13.jpg",
+      profilePicture: "pet/pet13.jpg",
       username: "Gary Duty",
     },
     {
       id:10,
-      profilePicture: "assets/pet/pet14.jpg",
+      profilePicture: "pet/pet14.jpg",
       username: "Safak Kocaoglu",
     },
   ];
@@ -55,7 +55,7 @@ export const Users = [
     {
       id: 1,
       desc: "Love For All, Hatred For None.",
-      photo: "assets/post/pet4.jpg",
+      photo: "post/pet4.jpg",
       date: "5 mins ago",
       userId: 1,
       like: 32,
@@ -63,7 +63,7 @@ export const Users = [
     },
     {
       id: 2,
-      photo: "assets/post/pet5.jpg",
+      photo: "post/pet5.jpg",
       date: "15 mins ago",
       userId: 2,
       like: 2,
@@ -72,7 +72,7 @@ export const Users = [
     {
       id: 3,
       desc: "Every moment is a fresh beginning.",
-      photo: "assets/post/pet7.jpg",
+      photo: "post/pet7.jpg",
       date: "1 hour ago",
       userId: 3,
       like: 61,
@@ -80,7 +80,7 @@ export const Users = [
     },
     {
       id: 4,
-      photo: "assets/post/pet15.jpg",
+      photo: "post/pet15.jpg",
       date: "4 hours ago",
       userId: 4,
       like: 7,
@@ -88,7 +88,7 @@ export const Users = [
     },
     {
       id: 5,
-      photo: "assets/post/pet16.jpg",
+      photo: "post/pet16.jpg",
       date: "5 hours ago",
       userId: 5,
       like: 23,
@@ -96,7 +96,7 @@ export const Users = [
     },
     {
       id: 6,
-      photo: "assets/post/pet17.jpg",
+      photo: "post/pet17.jpg",
       date: "1 day ago",
       userId: 6,
       like: 44,
@@ -105,7 +105,7 @@ export const Users = [
     {
       id: 7,
       desc: "Never regret anything that made you smile.",
-      photo: "assets/post/pet18.png",
+      photo: "post/pet18.png",
       date: "2 days ago",
       userId: 7,
       like: 52,
@@ -113,7 +113,7 @@ export const Users = [
     },
     {
       id: 8,
-      photo: "assets/post/pet19.jpg",
+      photo: "post/pet19.jpg",
       date: "3 days ago",
       userId: 8,
       like: 15,
@@ -122,7 +122,7 @@ export const Users = [
     {
       id: 9,
       desc: "Change the world by being yourself.",
-      photo: "assets/post/pet20.jpg",
+      photo: "post/pet20.jpg",
       date: "5 days ago",
       userId: 9,
       like: 11,
@@ -130,7 +130,7 @@ export const Users = [
     },
     {
       id: 10,
-      photo: "assets/post/pet21.jpg",
+      photo: "post/pet21.jpg",
       date: "1 week ago",
       userId: 10,
       like: 104,
