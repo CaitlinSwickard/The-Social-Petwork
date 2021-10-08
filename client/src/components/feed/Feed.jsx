@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 import "./feed.css";
 import Share from "../share/Share";
 import Post from "../post/Post";
-import PostCard from "../PostCard";
+import PostCard from "../PostCard/PostCard";
 import axios from "axios";
 // import { Posts } from "../../dummyData";
 import { AuthContext } from "../../context/auth";
@@ -33,11 +33,6 @@ function Feed() {
   // }, [user.username, user._id]);
 
   const { loading, error, data } = useQuery(QUERY_POSTS);
-  const allData = useQuery(QUERY_POSTS);
-
-  console.log("All data: ", allData);
-  console.log("User: ", user);
-  console.log("ENV: ", process.env.REACT_APP_SECRET_KEY);
 
   return (
     // <Navbar/>

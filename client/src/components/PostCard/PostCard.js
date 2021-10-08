@@ -3,20 +3,42 @@ import { Button, Card, Icon, Label, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-import { AuthContext } from "../context/auth";
+import { AuthContext } from "../../context/auth";
+import { DELETE_POST_MUTATION } from "../../utils/mutations";
+import { useMutation } from "@apollo/react-hooks";
+import "./postcard.css";
 
 function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes }}) {
   const { user } = useContext(AuthContext);
+
+  function reloadPage(){
+    window.location.reload();
+  }
+
+  const [deletePost, { error }] = useMutation(DELETE_POST_MUTATION, {
+    variables: {
+      postId: id
+    },
+    onError(err) { 
+      return err;
+    },
+    onCompleted() {
+      reloadPage();
+    }
+  });
   
   function likePost(){
     console.log("likePost");
   }
 
+  function deletePostCallback(){
+    deletePost(postId);
+  }
+
   return (
     <Card fluid>
       <Card.Content>
-        <Card.Header>{username}</Card.Header>
-        <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
+        <Card.Meta>{moment(createdAt).fromNow()} by <span className="post-username">{username}</span></Card.Meta>
         <Card.Description>{body}</Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -28,7 +50,7 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
             {likeCount}
           </Label>
         </Button>
-        <Button as='div' labelPosition='right' as={Link} to={`/posts/${id}`}>
+        <Button as='div' labelPosition='right'>
           <Button color='blue' basic>
             <Icon name='comments' />
           </Button>
@@ -37,8 +59,8 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
           </Label>
         </Button>
         {user && user.username === username && (
-          <Button as="div" color="red" onClick={() => console.log("Delete post")}>
-            <Icon name="trash" />
+          <Button icon onClick={deletePost}>
+            <Icon name="trash" size="small"/>
           </Button>
         )}
       </Card.Content>
