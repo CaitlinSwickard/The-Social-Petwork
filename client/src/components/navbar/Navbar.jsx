@@ -64,7 +64,7 @@ export default function Navbar(){
                             </div>
                             <br />
                             <div>
-                                <Link to="/" style={{textDecoration: 'none'}} onClick={logout}>
+                                <Link to="/loginpage" style={{textDecoration: 'none'}} onClick={logout}>
                                     Logout
                                 </Link>
                             </div> 
