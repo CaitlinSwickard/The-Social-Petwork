@@ -3,7 +3,7 @@ import Navbar from "../../components/navbar/Navbar"
 import Conversation from '../../components/conversations/Conversation'
 import Message from '../../components/message/Message'
 import ChatOnline from '../../components/chatOnline/ChatOnline'
-// import { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 // import { AuthContext } from "../../context/AuthContext"
 // import axios form "axios";
 // import { io } from "socket.io-client"
@@ -99,7 +99,23 @@ export default function Messenger() {
     //   useEffect(() => {
     //     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     //   }, [messages]);
+    const [messages, setMessages] = useState([
+        {
+            messageText:"BARK BARK",
+            messageBottom: "1 hour ago",
+        }
+    ])
 
+    const handleClickSend = (e) => {
+       
+        const tempObject = {
+            messageText: e.target.previousSibling.value,
+            messageBottom: "1 hour ago",
+        }
+        setMessages(
+            [...messages, tempObject]
+        );
+    }
 
     return (
         <>
@@ -120,20 +136,17 @@ export default function Messenger() {
                 <div className="chatBox" >
                     <div className="chatboxWrapper">
                         <div className="chatBoxTop">
-                        <Message/> 
-                        <Message/>
-                        <Message/>
-                        <Message/>
-                        {/* {messages.map((m) => (
-                    <div ref={scrollRef}>
-                      <Message message={m} own={m.sender === user._id} />
+                        
+                        {messages.map((m) => (
+                    <div key={m.messageText}>
+                      <Message messageText={m.messageText} messageBottom={m.messageBottom} />
                     </div>
-                  ))} */}
+                  ))}
 
                         </div>
                         <div className="chatBoxBottom">
                             <textarea className="chatMessageInput" placeholder="communicate something"></textarea>
-                            <button className="chatSend">SEND</button>
+                            <button className="chatSend" onClick={handleClickSend} >SEND</button>
                         </div>
                     </div>
                 </div>
