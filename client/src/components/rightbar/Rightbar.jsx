@@ -52,13 +52,18 @@ export default function Rightbar({ user }) {
   const HomeRightbar = () => {
     return (
       <>
-        <div className="birthdayContainer">
-          <img className="birthdayImg" src="assets/post/gift.png" alt="" />
-          <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birthday today.
-          </span>
+          <div className="widgets">
+          <iframe
+            src="https://www.petco.com/shop/en/petcostore/category/top-deals/30-off-100"
+            title="randomWidget"
+            style={{ border: "none", overflow: "hidden", width: "30rem", height: "25rem" }}
+            height="100%"
+            frameborder="0"
+            allowTransparency="none"
+            allow="encrypted-media"
+          ></iframe>
         </div>
-        <img className="rightbarAd" src="assets/post/pet6.png" alt="" />
+        <img className="rightbarAd" src="assets/ad.png" alt="" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
           {Users.map((u) => (
