@@ -11,13 +11,48 @@
     flex:5.5;
 }
 
+.chatboxWrapper{
+display:flex;
+flex-direction: column;
+}
+
+.chatBoxTop{
+    height: 100%;
+    overflow: scroll;
+    padding-right: 10px;
+
+}
+.chatBoxBottom{
+    margin-top: 5px;
+    display:flex ;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.chatMessageInput{
+    width: 80%;
+    height: 90px;
+    padding:10px ;
+}
+
+.chatSend{
+    width: 75px;
+    height: 40px; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: rgb(177, 104, 9);
+    color: black;
+
+}
+
 .chatOnline{
     flex: 3;
 }
 
 .chatMenuWrapper,.chatboxWrapper,.chatOnlineWrapper{
     padding:10px;
-    /* background-color: aqua; */
     height:100vh;
    }
 

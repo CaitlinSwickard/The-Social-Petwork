@@ -25,22 +25,24 @@ export default function Navbar(){
             </div>
             <div className="navbarCenter">
                 <div className="searchbar">
-                    <SearchIcon className="searchIcon"/>
-                    <input placeholder="Search for new Furriends" className="searchInput"/>
+                    <SearchIcon className="searchIcon" />
+                    <input placeholder="Search for new Furriends" className="searchInput" />
                 </div>
             </div>
             <div className="navbarRight">
                 <div className="navbarIcons">
                     <div className="navbarIconItem">
-                        <PetsIcon/>
+                        <PetsIcon />
                         <span className="navbarIconBadge">1</span>
                     </div>
                     <div className="navbarIconItem">
-                        <ChatIcon/>
+                        <Link to ="/messenger"  >
+                            <ChatIcon />
+                        </Link>
                         <span className="navbarIconBadge">2</span>
                     </div>
                     <div className="navbarIconItem">
-                        <NotificationsIcon/>
+                        <NotificationsIcon />
                         <span className="navbarIconBadge">1</span>
                     </div>
                 </div>
@@ -62,7 +64,7 @@ export default function Navbar(){
                             </div>
                             <br />
                             <div>
-                                <Link to="/" style={{textDecoration: 'none'}} onClick={logout}>
+                                <Link to="/loginpage" style={{textDecoration: 'none'}} onClick={logout}>
                                     Logout
                                 </Link>
                             </div> 
