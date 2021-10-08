@@ -56,7 +56,7 @@ export default function Rightbar({ user }) {
           <iframe
             src="https://www.petco.com/shop/en/petcostore/category/top-deals/30-off-100"
             title="randomWidget"
-            style={{ border: "none", overflow: "hidden", width: "100%" }}
+            style={{ border: "none", overflow: "hidden", width: "30rem", height: "25rem" }}
             height="100%"
             frameborder="0"
             allowTransparency="none"
