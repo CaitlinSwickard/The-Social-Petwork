@@ -26,11 +26,10 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
 
   const [editing, setEditing] = useState(false);
   const [editedBody, setEditedBody] = useState(body);
-  console.log(body);
 
   function updateHandler(event) {
     event.preventDefault();
-    if (newBody !== body) {
+    if (editedBody !== body) {
       updatePost();
     }
     setEditing(!editing);
