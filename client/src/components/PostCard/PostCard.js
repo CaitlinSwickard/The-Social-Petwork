@@ -14,7 +14,7 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
 
   const newBody = document.querySelector("#newBody");
 
-  const userLiked = (likes.find(like => like.username === user.username)) ? true : false;
+  const userLiked = (likes.find(like => like?.username === user?.username)) ? true : false;
 
   const [like, setLike] = useState(likeCount);
   const [isLiked, setIsLiked] = useState(userLiked);
