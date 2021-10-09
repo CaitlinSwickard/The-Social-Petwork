@@ -1,45 +1,95 @@
-import React, { useContext } from "react";
-import { Button, Card, Icon, Label, Image } from "semantic-ui-react";
+import React, { useContext, useState } from "react";
+import { Button, Card, Icon, Label, Image, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
 import { AuthContext } from "../../context/auth";
-import { DELETE_POST_MUTATION } from "../../utils/mutations";
+import { QUERY_POSTS } from "../../utils/queries";
+import { DELETE_POST_MUTATION, LIKE_POST_MUTATION, UPDATE_POST_MUTATION } from "../../utils/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import "./postcard.css";
 
-function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes }}) {
+function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) {
   const { user } = useContext(AuthContext);
 
-  function reloadPage(){
-    window.location.reload();
+  const newBody = document.querySelector("#newBody");
+
+  const userLiked = (likes.find(like => like.username === user.username)) ? true : false;
+
+  const [like, setLike] = useState(likeCount);
+  const [isLiked, setIsLiked] = useState(userLiked);
+
+  const likeHandler = () => {
+    setLike(isLiked ? like-1 : like+1);
+    setIsLiked(!isLiked);
   }
 
-  const [deletePost, { error }] = useMutation(DELETE_POST_MUTATION, {
+  const [editing, setEditing] = useState(false);
+  const [editedBody, setEditedBody] = useState(body);
+  console.log(body);
+
+  function updateHandler(event) {
+    event.preventDefault();
+    if (newBody !== body) {
+      updatePost();
+    }
+    setEditing(!editing);
+  }
+
+  const [deletePost, { deleteError }] = useMutation(DELETE_POST_MUTATION, {
     variables: {
       postId: id
     },
-    onError(err) { 
-      return err;
+    onError(deleteError) { 
+      return deleteError;
     },
-    onCompleted() {
-      reloadPage();
-    }
+    refetchQueries: [
+      QUERY_POSTS
+    ]
   });
   
-  function likePost(){
-    console.log("likePost");
-  }
+  const [likePost, { likeError }] = useMutation(LIKE_POST_MUTATION, {
+    variables: {
+      postId: id
+    },
+    onError(likeError) {
+      return likeError;
+    },
+    onCompleted(){
+      likeHandler();
+    }
+  });
 
-  function deletePostCallback(){
-    deletePost(postId);
+  const [updatePost, { updateError }] = useMutation(UPDATE_POST_MUTATION, {
+    variables: {
+      postId: id,
+      body: editedBody
+    },
+    onError(updateError) {
+      return updateError;
+    },
+    refetchQueries: [
+      QUERY_POSTS
+    ]
+  });
+
+  function onChange(event){
+    setEditedBody(event.target.value);
   }
 
   return (
     <Card fluid>
       <Card.Content>
         <Card.Meta>{moment(createdAt).fromNow()} by <span className="post-username">{username}</span></Card.Meta>
-        <Card.Description>{body}</Card.Description>
+        {editing ? (
+        <Card.Description>
+          <Form>
+            <Form.Field label='Edit your post' control='textarea' rows='3' id="newBody" value={editedBody} onChange={onChange} />
+            <Button onClick={updateHandler}>Submit</Button>
+          </Form>
+        </Card.Description>) : (
+          <Card.Description>{body}</Card.Description>
+        )}
       </Card.Content>
       <Card.Content extra>
         <Button as='div' labelPosition='right' onClick={likePost}>
@@ -47,7 +97,7 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
             <Icon name='paw' />
           </Button>
           <Label basic color='teal' pointing='left'>
-            {likeCount}
+            {like}
           </Label>
         </Button>
         <Button as='div' labelPosition='right'>
@@ -59,9 +109,14 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
           </Label>
         </Button>
         {user && user.username === username && (
-          <Button icon onClick={deletePost}>
-            <Icon name="trash" size="small"/>
-          </Button>
+          <div>
+            <Button icon onClick={updateHandler}>
+              <Icon name="pencil" size="small"/>
+            </Button>
+            <Button icon onClick={deletePost}>
+              <Icon name="trash" size="small"/>
+            </Button>
+          </div>
         )}
       </Card.Content>
     </Card>

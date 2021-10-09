@@ -29,3 +29,19 @@ export const DELETE_POST_MUTATION = gql`
     deletePost(postId: $postId)
   }
 `;
+
+export const LIKE_POST_MUTATION = gql`
+  mutation likePost($postId: ID!){
+    likePost(postId: $postId){
+      id
+    }
+  }
+`;
+
+export const UPDATE_POST_MUTATION = gql`
+  mutation updatePost($postId: ID!, $body: String!){
+    updatePost(postId: $postId, body: $body){
+      id
+    }
+  }
+`;
