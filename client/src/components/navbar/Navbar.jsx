@@ -36,7 +36,7 @@ export default function Navbar(){
                         <span className="navbarIconBadge">1</span>
                     </div>
                     <div className="navbarIconItem">
-                        <Link to ="/messenger"  >
+                        <Link to ="/messenger">
                             <ChatIcon />
                         </Link>
                         <span className="navbarIconBadge">2</span>

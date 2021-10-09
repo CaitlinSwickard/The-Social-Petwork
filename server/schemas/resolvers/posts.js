@@ -85,6 +85,22 @@ module.exports = {
       } else {
         throw new UserInputError("Post not found.");
       }
+    },
+
+    async updatePost(_, { postId, body }, context){
+      const { username } = checkAuth(context);
+
+      const post = await Post.findById(postId);
+
+      if (post && body) {
+        post.body = body;
+        await post.save();
+        return post;
+      } else if (post && !body) {
+        throw new UserInputError("Post body must not be blank.");
+      } else if (!post) {
+        throw new UserInputError("Post not found.");
+      }
     }
   }
 };
