@@ -85,7 +85,7 @@ export default function Share() {
           src={
             user?.profilePicture 
             ? PF + user.profilePicture
-            : PF + "pet/noAvatar.png"}
+            : PF + "pet/dogcat.jpg"}
           alt="" />
           <input
             placeholder={"What's on your mind " + user?.username + "?"}
