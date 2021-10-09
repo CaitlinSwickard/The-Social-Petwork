@@ -9,19 +9,19 @@
     z-index: 999;
   }
   .navbarLeft {
-    flex: 3;
+    flex: 4;
   }
   
   .logo {
-    font-size: 2.5rem;
-    margin-left: 20px;
+    margin-left: 3rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: white;
     cursor: pointer;
   }
   
   .navbarCenter {
-    flex: 5;
+    flex: 4;
   }
   
   .searchbar {
@@ -53,6 +53,7 @@
     align-items: center;
     justify-content: space-around;
     color: white;
+    margin-left: 20rem;
   }
   
   .navbarLink {
@@ -92,4 +93,7 @@
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
+    border: 2px solid white;
+    margin-right: .5rem;
   }
+
