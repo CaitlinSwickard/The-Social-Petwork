@@ -117,26 +117,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Switch>
-          {/* <Route exact path="/">
-            {user ? <FeedPage /> : <RegisterPage />}
-          </Route>
-          <Route path="/loginpage">
-            {user ? <Redirect to="/" /> : <LoginPage />}
-          </Route>
-          <Route path="/registerpage">
-            {user ? <Redirect to="/" /> : <RegisterPage />}
-            <RegisterPage />
-          </Route>
-          <Route path="/profile/:username">
-            <ProfilePage />
-          </Route> */}
-          <Route path="/messenger">
-         
-          </Route>
-        </Switch>
         <Navbar />
-        
         <Route exact path="/" component={FeedPage} />
         <Route exact path="/messenger" component={Messenger} />
         <AuthRoute exact path="/loginpage" component={Login} />

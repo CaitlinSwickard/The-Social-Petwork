@@ -20,7 +20,7 @@ export default function Navbar(){
         <div className="navbarContainer">
             <div className="navbarLeft">
                 <Link to="/" style={{textDecoration: 'none'}}>
-                <span className="logo">PetSocial</span>
+                <span className="logo">The Social Petwork</span>
                 </Link>
             </div>
             <div className="navbarCenter">
@@ -59,15 +59,12 @@ export default function Navbar(){
                                     alt="profile-picture" 
                                     className="navbarImg" 
                                     />
+                                    <span>{user.username}</span>
                                 </Link>
-                                <span>{user.username}</span>
-                            </div>
-                            <br />
-                            <div>
                                 <Link to="/loginpage" style={{textDecoration: 'none'}} onClick={logout}>
                                     Logout
                                 </Link>
-                            </div> 
+                            </div>
                         </div>
                     ) : (
                         <div>

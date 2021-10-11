@@ -86,6 +86,7 @@ import React, { useContext, useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../context/auth";
 import { useForm } from "../../utils/hooks";
@@ -187,7 +188,10 @@ function Register(props) {
           Register
         </Button>
       </Form>
-      {/* {Object.keys(errors).length > 0 && (
+      <Button as={Link} to="/loginpage">
+        Already have an account? Login here!
+      </Button>
+      {Object.keys(errors).length > 0 && (
         <div className="ui error message">
           <ul className="list">
             {Object.values(errors).map(value => (
@@ -195,7 +199,7 @@ function Register(props) {
             ))}
           </ul>
         </div>
-      )} */}
+      )}
     </div>
   )
 }
