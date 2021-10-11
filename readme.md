@@ -1,10 +1,15 @@
-# The Social Petwork - Project 3
+# The Social Petwork 
 
-This project is a social media application for pets! This app has the ability for a user to register/signup. Once the user is logged in they are directed to the feedpage. On the feedpage the user can see a timeline of other users posts. There the user can like a post from another user. A logged in user can create a new post. They have the ability to update that post as well as delete the post. 
 
-[View deployed Heroku app here]()
+This project is a social media application for pets! It was designed with humor as the users will be the pet themselves. This app has the ability for a user to register/signup. Once the user is logged in they are directed to the feedpage. On the feedpage the user can see a timeline of other users posts. There the user can like a post from another user. A logged in user can create a new post. They have the ability to update that post as well as delete the post. We first built this project with a REST API and then converted the backend to use GraphQL queries and mutations. 
+
+[View deployed Heroku app here](https://the-social-petwork-app.herokuapp.com/)
+[View presentation slides here](https://docs.google.com/presentation/d/1htlk49kj-wPQXrpZHVzvqVIGeb85KufIYeZpCEP9ie0/edit#slide=id.gb6c1ffefd6_0_12)
 - [Installation](#install)
 - [Start application](#start-application)
+- [Built With](#built-with)
+- [View](#view)
+- [Creator Breakdown](#creator-breakdown)
 
 
 ## User Story
@@ -12,7 +17,7 @@ This project is a social media application for pets! This app has the ability fo
 ```md
 AS A USER I want to be able to signup/login to a social media app
 ONCE logged in I want to be able to add a post
-IF I need to I want to update of delete this post 
+I want the ability to update or delete this post 
 I want to be able to see other users post on my timeline
 ```
 
@@ -27,13 +32,13 @@ npm i
 
 ## Start application
 
-Once all the packages have been installed, from the ROOT level of the file structure and run the following code in command line :
+Once all the packages have been installed, from the ROOT level of the file structure run the following code in command line :
 
 ```
 npm run develop
 ```
 
-This application runs on http://localhost:3000/ open url to begin using The Social Petwork. A new user should create a login by registering, then create as many posts as wanted. 
+This application runs on http://localhost:3000/ open url to begin using The Social Petwork. A new user should create a login by registering, then create/update/delete as many posts as wanted. 
 
 ## Built With
 
@@ -49,14 +54,23 @@ This application runs on http://localhost:3000/ open url to begin using The Soci
   - jsonwebtoken
   - apollo-server-express
   - graphql
-  - socket.io
+  - socket-io
 
 ## View
 
-![Shot-1]()
-![Shot-2]()
+![Mainpage](client/public/assets/mainpage.jpeg)
+![Messenger](client/public/assets/messenger.jpeg)
 
-### Credits
+### Creator Breakdown:
+
+- Scrum Master: [Caitlin](https://github.com/CaitlinSwickard)
+- Front End: [Ana](https://github.com/abanae) & [Max](https://github.com/maximosandoval)
+- REST API/ backend: [Caitlin](https://github.com/CaitlinSwickard)
+- GraphQl conversion/ backend: [Matt](https://github.com/COcoder555) & [Alicia](https://github.com/aliciachamar) 
+- Messenger: [Matt](https://github.com/COcoder555)
+
+
+#### Credits
 Videos we watched to help us build this application:
 
 Lama Dev
