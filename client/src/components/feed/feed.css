@@ -3,5 +3,13 @@
 }
 
 .feedWrapper{
+    margin-top: 8vh;
     padding: 20px;
 }
+
+/* @media screen and (max-width: 920px){
+        .feedWrapper{
+
+        }
+    
+} */
