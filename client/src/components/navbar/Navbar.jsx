@@ -29,7 +29,7 @@ export default function Navbar() {
              className="navbarImg"
            />
          </Link>
-         <span>{user.username}</span>
+         <span className="userName" >{user.username}</span>
          </div>
        ) : (
         <div></div>
@@ -39,7 +39,7 @@ export default function Navbar() {
           <span className="logo">The Social Petwork</span>
         </Link>
       </div>
-      <div className="navbarCenter">
+      {/* <div className="navbarCenter">
         <div className="searchbar">
           <SearchIcon className="searchIcon" />
           <input
@@ -47,7 +47,7 @@ export default function Navbar() {
             className="searchInput"
           />
         </div>
-      </div>
+      </div> */}
       <div className="navbarRight">
         <div className="navbarIcons">
           <div className="navbarIconItem">
@@ -72,7 +72,7 @@ export default function Navbar() {
                 <Link
                   id="link"
                   to="/loginpage"
-                  style={{ textDecoration: "none", marginLeft: "5rem" }}
+                  style={{ textDecoration: "none", marginLeft: "5vw" }}
                   onClick={logout}
                 >
                   Logout

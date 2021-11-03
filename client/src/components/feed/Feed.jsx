@@ -36,7 +36,7 @@ function Feed() {
 
   return (
     // <Navbar/>
-
+    
     <div className="feed">
       <div className="feedWrapper">
         <Share />
@@ -51,6 +51,7 @@ function Feed() {
         )}
       </div>
     </div>
+   
   )
 }
 
