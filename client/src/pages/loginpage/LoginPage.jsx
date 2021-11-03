@@ -1,4 +1,4 @@
-// import "./login.css";
+
 // import { useRef, useContext } from "react";
 // import {loginCall } from "../../apiCalls";
 // import { AuthContext } from "../../context/AuthContext";
@@ -64,7 +64,7 @@
 //     </div>
 //   );
 // }
-
+import "./login.css";
 import React, { useContext, useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useMutation } from "@apollo/react-hooks";
@@ -118,7 +118,16 @@ function Login(props) {
   };
 
   return (
+    <div className="loginWrapper">
     <div className="form-container">
+    <div className="loginLeft">
+          <h3 className="loginLogo">The Social Petwork</h3>
+          <span className="loginDesc">
+            Connect with Furriends and the world around you on PetSocial.
+          </span>
+        </div>
+        <div className="loginRight">
+        <div className="loginBox">
       <Form onSubmit={onSubmit} noValidate className={loading ? "loading" : ""}>
         <h1>Login</h1>
         <Form.Input
@@ -142,7 +151,12 @@ function Login(props) {
         <Button type="submit" primary>
           Login
         </Button>
+        <Button type="submit" positive>
+          Create An Account
+        </Button>
       </Form>
+      </div>
+      </div>
       {Object.keys(errors).length > 0 && (
         <div className="ui error message">
           <ul className="list">
@@ -152,6 +166,7 @@ function Login(props) {
           </ul>
         </div>
       )}
+    </div>
     </div>
   )
 }
