@@ -1,6 +1,6 @@
 // import axios from "axios";
 // import { useRef } from "react";
-// import "./register.css";
+
 // import { useHistory } from "react-router";
 
 // export default function RegisterPage() {
@@ -86,7 +86,7 @@ import React, { useContext, useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
-
+import "./register.css";
 import { AuthContext } from "../../context/auth";
 import { useForm } from "../../utils/hooks";
 
@@ -144,9 +144,11 @@ function Register(props) {
   }
 
   return (
-    <div className="form-container">
+    <div className="registerWrapper">
+    <div className="registerBox">
       <Form onSubmit={onSubmit} noValidate className={loading ? "loading" : ""}>
         <h1>Register</h1>
+        <div className="register">
         <Form.Input
           label="Username"
           placeholder="Username"
@@ -183,10 +185,12 @@ function Register(props) {
           error={errors.confirmPassword ? true : false}
           onChange={onChange}
         />
+        </div>
         <Button type="submit" primary>
-          Register
+          Sign Up
         </Button>
       </Form>
+      </div>
       {/* {Object.keys(errors).length > 0 && (
         <div className="ui error message">
           <ul className="list">
@@ -196,6 +200,7 @@ function Register(props) {
           </ul>
         </div>
       )} */}
+    
     </div>
   )
 }

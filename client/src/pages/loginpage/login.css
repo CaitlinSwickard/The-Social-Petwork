@@ -1,6 +1,6 @@
-.login {
+.form-container {
   width: 100vw;
-  height: 100vh;
+  height: 50rem;
   background-color: #f0f2f5;
   display: flex;
   align-items: center;
@@ -8,15 +8,12 @@
 }
 
 .loginWrapper {
-  width: 70%;
-  height: 70%;
   display: flex;
 }
 
 .loginLeft,
 .loginRight {
-  flex: 1;
-  display: flex;
+  
   flex-direction: column;
   justify-content: center;
 }
@@ -28,21 +25,36 @@
   margin-bottom: 10px;
 }
 
-.loginDesc {
-  font-size: 24px;
+.loginRight{
+margin-left: 8vw;
 }
 
 .loginBox{
-    height: 300px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 350px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.loginInput{
+.loginDesc {
+  font-size: 1.5vw;
+}
+
+Button{
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+Input{
     height: 50px;
     border-radius: 10px;
     border: 1px solid gray;
@@ -50,33 +62,24 @@
     padding-left: 20px;
 }
 
-.loginInput:focus{
-    outline: none;
+@media screen and (max-width: 920px) {
+  .form-container{
+    width: 125vw;
+  }
+  
 }
 
-.loginButton{
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    background-color: #1775ee;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-}
+/* Input:focus{
+    outline: none;
+} */
+
+/* 
 
 .loginButton:focus{
   outline: none;
 }
 
-.loginForgot{
-    text-align: center;
-    color: #1775ee;
-}
 
-.loginButton:disabled{
-  cursor: not-allowed;
-}
 
 .loginRegisterButton{
     width: 60%;
@@ -89,8 +92,20 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-}
-.flex-row justify-center mb-4 {
+} */
+
+
+
+
+/* .loginForgot{
+    text-align: center;
+    color: #1775ee;
+} */
+
+/* .loginButton:disabled{
+  cursor: not-allowed;
+} */
+/* .flex-row justify-center mb-4 {
 
 }
 
@@ -124,4 +139,4 @@
 
 .my-3 p-3 bg-danger text-white {
 
-}
+} */
