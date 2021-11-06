@@ -99,7 +99,7 @@ import Login from "./pages/loginpage/LoginPage";
 import ProfilePage from "./pages/profilepage/ProfilePage";
 import Register from "./pages/registerpage/RegisterPage";
 import Messenger from './pages/messenger/Messenger';
-import Navbar from "./components/navbar/Navbar";
+// import Navbar from "./components/navbar/Navbar";
 import {
   BrowserRouter as Router,
   Switch,
@@ -135,7 +135,7 @@ function App() {
          
           </Route>
         </Switch>
-        <Navbar />
+        {/* <Navbar/> */}
         
         <Route exact path="/" component={FeedPage} />
         <Route exact path="/messenger" component={Messenger} />

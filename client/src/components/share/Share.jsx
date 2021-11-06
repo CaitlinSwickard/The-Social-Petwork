@@ -98,9 +98,11 @@ export default function Share() {
         <hr className="shareHr"/>
         {/* to show image while creating a post before it is posted */}
         {file && (
-          <div className="shareImgContainer">
+          <div className="imageCont">
+          <div className="shareImgContainer" >
             <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
             <Cancel className="shareCancelImg" onClick={() => setFile(null)} />
+          </div>
           </div>
         )}
         <form className="shareBottom" onSubmit={onSubmit}>
