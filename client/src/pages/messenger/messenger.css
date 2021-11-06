@@ -1,4 +1,5 @@
 .messenger{
+    margin-top: 4vw;
     height: calc(100vh-70px);
     display: flex;
 }
@@ -62,3 +63,15 @@ flex-direction: column;
        border: none;
        border-bottom: 1px solid gray;
    }
+
+
+   /* Small Screens Post section */
+@media screen and (max-width: 599px){
+    .messenger{
+        margin-top: 24.5vw;
+        
+    }
+   
+
+}
+
