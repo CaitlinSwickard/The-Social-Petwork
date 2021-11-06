@@ -3,8 +3,8 @@
 
 This project is a social media application for pets! It was designed with humor as the users will be the pet themselves. This app has the ability for a user to register/signup. Once the user is logged in they are directed to the feedpage. On the feedpage the user can see a timeline of other users posts. There the user can like a post from another user. A logged in user can create a new post. They have the ability to update that post as well as delete the post. We first built this project with a REST API and then converted the backend to use GraphQL queries and mutations. 
 
-[View deployed Heroku app here](https://serene-tundra-79280.herokuapp.com/registerpage)
-[View presentation slides here](https://docs.google.com/presentation/d/1htlk49kj-wPQXrpZHVzvqVIGeb85KufIYeZpCEP9ie0/)
+* [View deployed Heroku App here](https://serene-tundra-79280.herokuapp.com/registerpage)
+* [View presentation slides here](https://docs.google.com/presentation/d/1htlk49kj-wPQXrpZHVzvqVIGeb85KufIYeZpCEP9ie0/)
 - [Installation](#install)
 - [Start application](#start-application)
 - [Built With](#built-with)

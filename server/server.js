@@ -9,7 +9,6 @@ const multer = require("multer");
 const cors = require('cors');
 
 
-
 // const userRoute = require("./routes/users");
 // const authRoute = require("./routes/auth");
 // const postRoute = require("./routes/posts");
