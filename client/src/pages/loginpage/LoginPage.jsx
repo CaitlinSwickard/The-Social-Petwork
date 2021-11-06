@@ -69,7 +69,7 @@ import React, { useContext, useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
-
+import {Link} from "react-router-dom";
 import { AuthContext } from "../../context/auth";
 import { useForm } from "../../utils/hooks";
 
@@ -151,9 +151,11 @@ function Login(props) {
         <Button type="submit" primary>
           Login
         </Button>
+        <Link to="/registerpage" >
         <Button type="submit" positive>
           Create An Account
         </Button>
+        </Link>
       </Form>
       </div>
       </div>

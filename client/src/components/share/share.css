@@ -75,10 +75,15 @@
       color: white;
   }
 
-  .shareImgContainer{
-    padding: 0 20px 10px 20px;
-    position: relative;
+  .imageCont{
+    
   }
+
+  .shareImgContainer{
+    z-index: 999 ;
+    position: fixed;
+  }
+ 
   
   .shareImg{
     width: 100%;

@@ -1,4 +1,4 @@
-.navbarContainer {
+/* .navbarContainer {
     height: 60px;
     width: 100%;
     background-color: #18f27a;
@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     z-index: 900;
-  }
+  } */
   .navbarLeft {
     flex: 4;
   }
@@ -64,6 +64,9 @@
   
   .navbarIcons {
     display: flex;
+    justify-content:flex-end;
+    margin: -33px 10px;
+   
   }
   
   .navbarIconItem {
@@ -97,9 +100,22 @@
     margin-right: .5rem;
   }
 
+.regs{
+  margin-top: 3.2vw !important;
+}
+.listItems{
+  display:flex;
+  flex-direction: column;
+  padding:initial;
+}
 
  @media screen and (max-width: 920px) {
     .userName{
       display: none;
     }
+  }
+
+  @media screen and (max-width: 600px) {
+   .navbarIcons {
+      display: none;}
   }
