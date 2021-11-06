@@ -1,4 +1,16 @@
 .homeContainer{
     display: flex;
-    width: 100vw;
+    width: 100%;
+}
+@media screen and (min-width: 901px){
+    .homeContainer{
+        margin-top: 6.5vw;
+      
+    }
+}
+@media screen and (min-width: 600px){
+    .homeContainer{
+        margin-top: 8.5vh;
+    }
+  
 }

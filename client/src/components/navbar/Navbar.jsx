@@ -90,6 +90,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/auth";
 import { makeStyles } from "@material-ui/core";
 
+
 const useStyles = makeStyles((theme) => ({
   menuIconContainer: {
     marginLeft: "auto", // theme.spacing (2),
@@ -98,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar(props) {
   const classes = useStyles();
+
   const { user, logout } = useContext(AuthContext);
 
   console.log(user);
@@ -195,11 +197,11 @@ export default function Navbar(props) {
         </div>
       </div> */}
       {/* Hamburger Menu */}
-      <div className="navbarRight">
-        <Box sx={{ display: "flex" }}>
+      
+        <Box  sx={{ display: "flex" }}>
           <CssBaseline />
-          <AppBar
-            color="primary" //transparent
+          <AppBar 
+            // color="primary" //transparent
             position="fixed" //absolute
             sx={{
               height: { sm: `calc(49% - ${drawerWidth}px)` },
@@ -279,7 +281,7 @@ export default function Navbar(props) {
                         Login
                       </Link>
                     </div>
-                    <div className="regs">
+                    <div>
                       <Link
                         to="/registerpage"
                         style={{ textDecoration: "underline", color: "white" }}
@@ -379,7 +381,7 @@ export default function Navbar(props) {
             </div>
           )}
         </div> */}
-      </div>
+      
     </div>
   );
 }
