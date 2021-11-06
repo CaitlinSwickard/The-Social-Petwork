@@ -1,53 +1,53 @@
-const io = require("socket.io")(8900,{
-    cors:{
-        origin:"http://localhost:3000",
+// const io = require("socket.io")(8900,{
+//     cors:{
+//         origin:"http://localhost:3000",
 
-    },
-});
+//     },
+// });
 
-let users = [];
+// let users = [];
 
-const addUser = (userId, socketId)=>{
-    !users.some((user)=> user.userId === userId) &&
-    users.push({userId, socketId});
-};
+// const addUser = (userId, socketId)=>{
+//     !users.some((user)=> user.userId === userId) &&
+//     users.push({userId, socketId});
+// };
 
-const removeUser = (socketId)=>{
-    users = users.filter((user)=>user.socketId !== socketId)
-};
+// const removeUser = (socketId)=>{
+//     users = users.filter((user)=>user.socketId !== socketId)
+// };
 
-const getUser = (userId) =>{
-  return  users.find((user)=> user.userId === userId);
-};
-
-
-// when connected 
-
-io.on("connection", (socket)=>{
-    console.log("user connected")
-});
+// const getUser = (userId) =>{
+//   return  users.find((user)=> user.userId === userId);
+// };
 
 
-// take userID and socke Id from user
+// // when connected 
 
-socket.on("addUser",(userId)=>{
-    addUser(userId,socketid);
-    io.emit("getUsers",users);
-});
+// io.on("connection", (socket)=>{
+//     console.log("user connected")
+// });
 
-// send and get message
-socket.on("sendMessage",({serderId, receiverId,text})=>{
-    const user = getUser(receiverId);
-    io.to(user.socketId).emit("getMessage",{
-        serderId,
-        text,
-    });
-});
 
-// when disconnect 
-socket.on("disconnect",()=>{
-    console.log("user disconnected!");
-    removeUser(socket.id);
-    io.emit("getUsers",users);
-});
+// // take userID and socke Id from user
+
+// socket.on("addUser",(userId)=>{
+//     addUser(userId,socketid);
+//     io.emit("getUsers",users);
+// });
+
+// // send and get message
+// socket.on("sendMessage",({serderId, receiverId,text})=>{
+//     const user = getUser(receiverId);
+//     io.to(user.socketId).emit("getMessage",{
+//         serderId,
+//         text,
+//     });
+// });
+
+// // when disconnect 
+// socket.on("disconnect",()=>{
+//     console.log("user disconnected!");
+//     removeUser(socket.id);
+//     io.emit("getUsers",users);
+// });
 
