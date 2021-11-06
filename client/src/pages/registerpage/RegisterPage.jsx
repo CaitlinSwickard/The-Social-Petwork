@@ -89,6 +89,7 @@ import gql from "graphql-tag";
 import "./register.css";
 import { AuthContext } from "../../context/auth";
 import { useForm } from "../../utils/hooks";
+import {Link} from "react-router-dom";
 
 const REGISTER_USER = gql`
   mutation register(
@@ -189,6 +190,11 @@ function Register(props) {
         <Button type="submit" primary>
           Sign Up
         </Button>
+        <Link to="/loginpage">
+        <Button type="submit" positive>
+          Log in
+        </Button>
+        </Link>
       </Form>
       </div>
       {/* {Object.keys(errors).length > 0 && (
