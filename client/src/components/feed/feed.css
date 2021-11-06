@@ -6,10 +6,22 @@
     margin-top: 8vh;
     padding: 20px;
 }
-
-/* @media screen and (max-width: 920px){
-        .feedWrapper{
-
+/* Small Screens Post section */
+@media screen and (max-width: 599px){
+        .feed{
+            margin-top: 18vw;
+            
         }
+       
     
-} */
+}
+/* bigger Screens feed section */
+@media screen and (min-width: 901px){
+    .feedWrapper{
+        margin-top: 2.5vh;
+        
+       
+    }
+}
+
+

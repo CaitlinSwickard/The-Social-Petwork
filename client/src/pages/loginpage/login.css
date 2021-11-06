@@ -68,6 +68,22 @@ Input{
   }
   
 }
+@media screen and (max-width: 599px){
+  .form-container{
+     display: block;
+  }
+  .loginLogo{
+   text-align: center;
+  }
+ .loginDesc{
+   font-size: 3.2vw;
+   margin-left: 7vw;
+ text-align: center;
+ }
+.loginBox{
+  margin-right: 8vw;
+}
+}
 
 /* Input:focus{
     outline: none;
