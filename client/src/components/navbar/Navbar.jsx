@@ -204,7 +204,7 @@ export default function Navbar(props) {
             // color="primary" //transparent
             position="fixed" //absolute
             sx={{
-              height: { sm: `calc(49% - ${drawerWidth}px)` },
+              // height: { sm: `calc(49% - ${drawerWidth}px)` },
               ml: { sm: `${drawerWidth}px` },
             }}
           >
