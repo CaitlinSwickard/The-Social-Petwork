@@ -68,9 +68,3 @@
     object-fit: cover;
     margin-right: 10px;
   }
-
-  /* @media screen and (max-width: 901px) {
-    .leftbar{
-      display: none;
-    }
-  } */
