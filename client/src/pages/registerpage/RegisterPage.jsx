@@ -188,11 +188,11 @@ function Register(props) {
         />
         </div>
         <Button type="submit" primary>
-          Sign Up
+          Create Account
         </Button>
         <Link to="/loginpage">
         <Button type="submit" positive>
-          Log in
+          Already Registered? Log in
         </Button>
         </Link>
       </Form>
