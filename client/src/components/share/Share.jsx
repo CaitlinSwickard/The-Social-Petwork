@@ -19,28 +19,28 @@ export default function Share() {
   const desc = useRef();
   const [file, setFile] = useState(null);
 
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-  //   // create a new post
-  //   const newPost = {
-  //     userId: user._id,
-  //     desc: desc.current.value,
-  //   };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    // create a new post
+    const newPost = {
+      userId: user._id,
+      desc: desc.current.value,
+    };
   //   // this uploads local photos to the new post and the form data entered
-  //   if (file) {
-  //     const data = new FormData();
-  //     const fileName = Date.now() + file.name;
-  //     data.append("name", fileName);
-  //     data.append("file", file);
-  //     newPost.img = fileName;
-  //     console.log(newPost);
-  //     try {
-  //       await axios.post("/api/upload", data);
-  //       window.location.reload();
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   }
+    if (file) {
+      const data = new FormData();
+      const fileName = Date.now() + file.name;
+      data.append("name", fileName);
+      data.append("file", file);
+      newPost.img = fileName;
+      console.log(newPost);
+      try {
+        await axios.post("/api/upload", data);
+        window.location.reload();
+      } catch (err) {
+        console.log(err);
+      }
+    }
   //   // reload page after new post
   //   try {
   //     await axios.post("/api/posts", newPost);
@@ -48,7 +48,7 @@ export default function Share() {
   //   } catch (err) {
   //     console.log(err);
   //   }
-  // };
+  };
 
   const { values, onChange, onSubmit } = useForm(createPostCallback, {
     body: ""
