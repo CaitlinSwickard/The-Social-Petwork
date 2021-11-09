@@ -1,72 +1,4 @@
 import "./navbar.css";
-// import SearchIcon from "@mui/icons-material/Search";
-
-// import MailIcon from "@mui/icons-material/Mail";
-
-//   return (
-//     <Box sx={{ display: "flex" }}>
-//       <CssBaseline />
-//       <AppBar
-//         position="fixed"
-//         sx={{
-//           // width: { sm: `calc(100% - ${drawerWidth}px)` },
-//           ml: { sm: `${drawerWidth}px` }
-//         }}
-//       >
-//         <Toolbar>
-//           <IconButton
-//             color="inherit"
-//             aria-label="open drawer"
-//             edge="start"
-//             onClick={handleDrawerToggle}
-//             sx={{ mr: 2, display: { sm: "none" } }}
-//           >
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography variant="h6" noWrap component="div">
-//             Responsive drawer
-//           </Typography>
-//         </Toolbar>
-//       </AppBar>
-//       <Box
-//         component="nav"
-//         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-//         aria-label="mailbox folders"
-//       >
-//         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-//         <Drawer
-//           container={container}
-//           variant="temporary"
-//           open={mobileOpen}
-//           onClose={handleDrawerToggle}
-//           ModalProps={{
-//             keepMounted: true // Better open performance on mobile.
-//           }}
-//           sx={{
-//             display: { xs: "block", sm: "none" },
-//             "& .MuiDrawer-paper": {
-//               boxSizing: "border-box",
-//               width: drawerWidth
-//             }
-//           }}
-//         >
-//           {drawer}
-//         </Drawer>
-//       </Box>
-//     </Box>
-//   );
-// }
-
-// ResponsiveDrawer.propTypes = {
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func
-// };
-
-// export default ResponsiveDrawer;
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -117,13 +49,6 @@ export default function Navbar(props) {
   const drawer = (
     <div>
       <Toolbar />
-      {/* <List>
-        {["Paws", "Messages", "Notifications", "Logout"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List> */}
       <List className="listItems">
         <Link
           id="link"
@@ -163,41 +88,7 @@ export default function Navbar(props) {
 
   return (
     <div>
-      {/* <div className="navbarContainer"> */}
-      {/* {user ? (
-           <div>
-           <Link to={`/profile/${user.username}`} style={{marginLeft: "1.5rem" }}>
-           <img
-             src={
-               user.profilePicture
-                 ? PF + user.profilePicture
-                 : PF + "pet/dogcat.jpg"
-             }
-             alt="profile-picture"
-             className="navbarImg"
-           />
-         </Link>
-         <span className="userName" >{user.username}</span>
-         </div>
-       ) : (
-        <div></div>
-       )}  */}
-      {/* <div className="navbarLeft">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">The Social Petwork</span>
-        </Link>
-      </div> */}
-      {/* <div className="navbarCenter">
-        <div className="searchbar">
-          <SearchIcon className="searchIcon" />
-          <input
-            placeholder="Search for new Furriends"
-            className="searchInput"
-          />
-        </div>
-      </div> */}
       {/* Hamburger Menu */}
-      
         <Box  sx={{ display: "flex" }}>
           <CssBaseline />
           <AppBar 
@@ -215,7 +106,7 @@ export default function Navbar(props) {
               <div>
                 <Link
                   to={`/profile/${user.username}`}
-                  style={{ marginLeft: "1.5rem" }}
+                  style={{ marginLeft: "1.5rem"}}
                 >
                   <img
                     src={
@@ -332,56 +223,6 @@ export default function Navbar(props) {
             </Drawer>
           </Box>
         </Box>
-        {/* <div className="navbarIcons">
-          <div className="navbarIconItem">
-            <PetsIcon />
-            <span className="navbarIconBadge">1</span>
-          </div>
-          <div className="navbarIconItem">
-            <Link to="/messenger">
-              <ChatIcon />
-            </Link>
-            <span className="navbarIconBadge">2</span>
-          </div>
-          <div className="navbarIconItem">
-            <NotificationsIcon />
-            <span className="navbarIconBadge">1</span>
-          </div>
-        </div> */}
-        {/* <div className="navbarlinks">
-          {user ? (
-            <div>
-              <div>
-                <Link
-                  id="link"
-                  to="/loginpage"
-                  style={{ textDecoration: "none", marginLeft: "5vw" }}
-                  onClick={logout}
-                >
-                  Logout
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <div>
-              <div>
-                <Link
-                  to="/loginpage"
-                  style={{ textDecoration: "none" }}
-                  onClick={logout}
-                >
-                  Login
-                </Link>
-              </div>
-              <div>
-                <Link to="/registerpage" style={{ textDecoration: "none" }}>
-                  Register
-                </Link>
-              </div>
-            </div>
-          )}
-        </div> */}
-      
     </div>
   );
 }
